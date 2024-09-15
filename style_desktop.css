@@ -37,13 +37,13 @@ body {
 }
 
 .header {
-    position: sticky;
     position: -webkit-sticky;
+    position: sticky;
     top: 0;
     width: 100%;
-    height: 60px;
+    height: 58px;
     background-color: #202020;
-    border-bottom: 2.7px solid #636363;
+    border-bottom: 1.7px solid #636363;
     z-index: 1;
     font-size: 1.1rem;
     display: grid;
@@ -52,13 +52,13 @@ body {
 }
 
 .left {
-    position: sticky;
     position: -webkit-sticky;
-    top: 62.5px;
+    position: sticky;
+    top: 60px;
     height: calc(100vh - 62.5px);
     box-sizing: border-box;
     overflow-y: auto;
-    border-right: 2.7px solid #636363;
+    border-right: 1.7px solid #636363;
 }
 
 .middle {
@@ -160,7 +160,7 @@ body {
 
 .hide-content a {
     display: block;
-    padding: 5px 0px 0px 17%;
+    padding: 5px 0px 0px 15%;
     text-decoration: none;
     font-size: 0.95rem;
     color: #d6d6d6;
@@ -217,13 +217,13 @@ ul li {
 }
 
 .page-table {
-    width: 100%;
+    width: auto;
     border-collapse: collapse;
     text-align: left;
 }
 
 th, td {
-    padding: 4px;
+    padding: 6px 20px 6px 6px;
     border: 1px solid #636363;
 }
 
@@ -232,17 +232,20 @@ th, td {
 }
 
 .page-table th {
-    background-color: #424242;
+    background-color: #272727;
+    text-align: center;
+    font-size: 1.2em;
 }
 
 .page-table tr:nth-child(odd) {
-    background-color: #212121;
+    background-color: #191919;
 }
 
 .caption {
     margin-top: 7px;
     padding: 4px 0px 4px 10px;
-    border-left: 6px solid #636363;
+    border-left: 6px solid #515151;
+    color: #5c5c5c;
 }
 
 .break {
@@ -256,24 +259,27 @@ th, td {
     margin: 3rem 0 3rem 0;
 }
 
+
+
+/* ---------- info boxes ---------- */
 .warning {
     padding:10px;
     background-color: #ca5b5b;
-    border-left: 12px solid rgb(184, 7, 7);
+    border-left: 12px solid rgb(227, 55, 55);
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
 }
 .info {
     padding:10px;
-    background-color: #8e8025;
-    border-left: 12px solid rgb(207, 203, 4);
+    background-color: #d4cf40;
+    border-left: 12px solid rgb(171, 169, 11);
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
 }
 .additional {
     padding:10px;
-    background-color: #2690ab;
-    border-left: 12px solid rgb(96, 218, 234);
+    background-color: #49c0de;
+    border-left: 12px solid rgb(0, 149, 169);
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
 }
@@ -282,6 +288,9 @@ th, td {
     padding-bottom: 12px;
     text-transform:uppercase;
     font-size: 1.2rem;
+}
+.warning p, .additional p, .info p {
+    color: #1d1d1d;
 }
 
 
@@ -370,6 +379,10 @@ th, td {
     overflow-x: auto;
     color: #c5c5c5;
 }
+
+
+
+/* ---------- color codes ---------- */
 .gray {color: #9B9B9B;}
 .orange {color: #D69D85}
 .light-orange {color: #E6C9BB}
@@ -401,12 +414,14 @@ th, td {
 .right {
     position: sticky;
     top: 92.5px;
-    height: fit-content;
+
+    height:max-content;
+
     max-height: 70vh;
     box-sizing: border-box;
     overflow-y: auto;
     margin: 5px;
-    border-left: 2.7px solid #636363;
+    border-left: 1.7px solid #636363;
     padding: 20px 12px;
     /* background-color: red; */
 }
@@ -433,7 +448,7 @@ th, td {
 
 /* --------- footer ---------- */
 .footer {
-    border-top: 2.7px solid #636363;
+    border-top: 1.7px solid #636363;
     background-color: #202020;
     text-align: center;
     padding: 2rem 0px;
@@ -515,9 +530,10 @@ th, td {
     width: 20px;
     max-height: 20px;
     max-width: 20px;
+    transition: 0.1s;
 }
 .modal-header svg:hover {
-    fill: #828282;
+    fill: #db5757;
 }
 .modal-header .svg-right {
     text-align: right;
@@ -541,7 +557,7 @@ th, td {
     cursor: default;
 }
 .modal-line {
-    height: 2.7px;
+    height: 1.7px;
     background-color: #636363;
     margin: 1rem 0px;
 }
@@ -554,6 +570,8 @@ th, td {
     color: rgb(109, 100, 244);
     text-decoration: underline;
 }
+
+
 
 /* ---------- text code ---------- */
 .bg-highlight {

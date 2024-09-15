@@ -10,7 +10,6 @@ document.head.appendChild(favicon);
 
 // create left nav menu
 const navMenu = document.getElementsByClassName('left')[0];
-var b;
 const navMenuContent = {
     "navboxes": [
         {
@@ -88,7 +87,6 @@ for (let b = 0; b < navMenuContent.navboxes.length; b++) {
     navBoxTitle.innerHTML = navMenuContent.navboxes[b].title;
 
     const linksLength = navMenuContent.navboxes[b].links.length;
-    var k;
 
     for (let k = 0; k < linksLength; k++) {
         var navBoxLinks = document.createElement('a');
@@ -111,7 +109,6 @@ for (let b = 0; b < navMenuContent.navboxes.length; b++) {
 
 // smooth opening animation
 const boxes = document.getElementsByClassName('nav-box');
-var i;
 
 for (let i = 0; i < boxes.length; i++) {
     boxes[i].addEventListener('click', function() {
@@ -138,7 +135,6 @@ headP.classList.add('right-head');
 navRight.appendChild(headP);
 
 const h2tags = document.getElementsByTagName('h2');
-var h;
 
 for (let h = 0; h < h2tags.length; h++) {
     h2tags[h].setAttribute('id','section'+h);
@@ -161,7 +157,6 @@ navRight.childNodes[0].addEventListener('click', function() {
 
 // copy in page links
 const links = document.getElementsByClassName('page-text-link');
-var l;
 
 for (let l = 0; l < links.length; l++) {
     links[l].addEventListener('click', function() {
@@ -179,9 +174,8 @@ for (let l = 0; l < links.length; l++) {
 
 
 // copy code
-const copyBtn = document.getElementsByClassName('code-function');
+const copyBtn = document.getElementsByClassName('code-clipboard');
 const copySpace = document.getElementsByClassName('code-right');
-var c;
 
 for (let c = 0; c < copyBtn.length; c++) {
     copyBtn[c].addEventListener('click', function() {
@@ -189,14 +183,12 @@ for (let c = 0; c < copyBtn.length; c++) {
         copyBtn[c].children[0].style.display = 'none';
         copyBtn[c].lastElementChild.innerHTML = 'Code copied!';
 
-        const code = document.getElementsByClassName('code-display');
-        var d;
-        for (let d = 0; d < code.length; d++) {
-            var rawCode = code[d].innerHTML;
-            var newCode = rawCode.replace(/<span class="green">/g,'').replace(/<span class="light-green">/g,'').replace(/<span class="purple">/g,'').replace(/<span class="orange">/g,'').replace(/<span class="light-orange">/g,'').replace(/<span class="blue">/g,'').replace(/<span class="light-blue">/g,'').replace(/<span class="gray">/g,'').replace(/<span class="yellow">/g,'').replace(/<span class="dark-yellow">/g,'').replace(/<\/span>/g,'').replace(/<p>/g,'').replace(/<\/p>/g,'').replace(/<br>/g,'').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/\u2002/g,'  ').replace(/                            /g,'').replace(/\n                        /g,'');
+        const code = document.getElementsByClassName('code-display')[c];
 
-            navigator.clipboard.writeText(newCode);
-        } 
+        var rawCode = code.innerHTML;
+        var newCode = rawCode.replace(/<span class="green">/g,'').replace(/<span class="light-green">/g,'').replace(/<span class="purple">/g,'').replace(/<span class="orange">/g,'').replace(/<span class="light-orange">/g,'').replace(/<span class="blue">/g,'').replace(/<span class="light-blue">/g,'').replace(/<span class="gray">/g,'').replace(/<span class="yellow">/g,'').replace(/<span class="dark-yellow">/g,'').replace(/<\/span>/g,'').replace(/<p>/g,'').replace(/<\/p>/g,'').replace(/<br>/g,'').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/\u2002/g,'  ').replace(/                        /g,'').replace(/\n                    /g,'');
+        navigator.clipboard.writeText(newCode);
+        console.log(newCode);
 
         setTimeout(function () {
             copyBtn[c].classList.remove('not-active');
@@ -212,7 +204,6 @@ for (let c = 0; c < copyBtn.length; c++) {
 // generate line counter
 const indexCount = document.getElementsByClassName('code-index');
 const codeBoxCounter = document.getElementsByClassName('code-view');
-var x;
 
 for (let x = 0; x < codeBoxCounter.length; x++) {
     var clen = codeBoxCounter[x].children[1].children.length;
