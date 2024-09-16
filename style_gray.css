@@ -1,41 +1,41 @@
 * {
     margin: 0;
     padding: 0;
-    /* border: 1px solid red; */
+    /* border: 1px solid red; @TEST*/
 }
 
+
+
+/* ---------- scrollbar styles ---------- */
 html {
     scroll-behavior: smooth;
 }
-
 ::-webkit-scrollbar {
     width: 10px;
 }
-
 ::-webkit-scrollbar-track {
     background-color: rgb(42, 42, 42);
 }
-
 ::-webkit-scrollbar-thumb {
     background-color: rgba(98, 98, 98, 0.577);
 }
 
+
+
+/* ---------- overall page layout ---------- */
 body {
     background: #121212;
     /* background: linear-gradient(0deg, #2f2f2f 0%, rgba(18,18,18,1) 4%); */
     color: #d6d6d6;
     font-family: Verdana, sans-serif;
 }
-
 .page-content div {
     color: #d6d6d6;
 }
-
 .page-content {
     display: grid;
     grid-template-columns: 2fr 5fr 2fr;
 }
-
 .header {
     position: -webkit-sticky;
     position: sticky;
@@ -50,7 +50,6 @@ body {
     grid-template-columns: 50% 50%;
     align-items: center;
 }
-
 .left {
     position: -webkit-sticky;
     position: sticky;
@@ -60,12 +59,13 @@ body {
     overflow-y: auto;
     border-right: 1.7px solid #636363;
 }
-
 .middle {
-    padding: 15px;
-    /* background-color: red; */
+    padding: 15px 15px 25px 15px;
 }
 
+
+
+/* ---------- main nav bar top (header) ---------- */
 .nav-right {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -73,7 +73,6 @@ body {
     margin-right: 25px;
     gap: 5%;
 }
-
 .nav-right a {
     text-decoration: none;
     color: #d6d6d6;
@@ -81,12 +80,10 @@ body {
     padding: 8px;
     border-radius: 13px;
 }
-
 .nav-right a:hover {
     background-color: #424242;
     cursor: pointer;
 }
-
 .nav-left {
     display: grid;
     grid-template-columns: auto auto;
@@ -96,23 +93,24 @@ body {
     cursor: pointer;
     text-decoration: none;
 }
-
 .nav-left img {
     height: 38px;
     max-width: 38px;
     width: 38px;
     max-width: 38px;
 }
-
 .nav-left p {
     padding: 15px;
     color: #d6d6d6;
+    font-weight: bold;
 }
-
 .nav-left-a {
     text-decoration: none;
 }
 
+
+
+/* ---------- nav bar left side ---------- */
 .nav-box {
     display: grid;
     grid-template-rows: auto auto;
@@ -120,22 +118,18 @@ body {
     cursor: default;
     padding: 7px;
 }
-
 .nav-box:not(:last-child) {
     border-bottom: 2px solid #636363;
 }
-
 .nav-visual {
     display: grid;
     grid-template-columns: 7% auto;
 }
-
 .nav-box p {
     color: #d6d6d6;
     font-size: 1.1rem;
     padding-left: 10px;
 }
-
 .nav-box svg {
     fill: #d6d6d6;
     height: 20px;
@@ -143,21 +137,17 @@ body {
     max-width: 20px;
     transition: 0.07s;
 }
-
 .active svg {
     transform: rotate(90deg);
 }
-
 .active p {
     color: rgb(109, 100, 244);
 }
-
 .hide-content {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
-
 .hide-content a {
     display: block;
     padding: 5px 0px 0px 15%;
@@ -165,123 +155,127 @@ body {
     font-size: 0.95rem;
     color: #d6d6d6;
 }
-
 .hide-content a:hover {
-    text-decoration: underline;
+    color: #9f9f9f;
 }
 
+
+
+/* ---------- tags ---------- */
+.tag {
+    color: #d6d6d6 !important;
+    font-weight: bold;
+    font-size: 0.8em;
+    border-radius: 3px;
+    padding: 2px 4px;
+    margin-right: 0.7em;
+    text-transform: uppercase;
+    display:inline-block;
+}
+.tag-green {background-color: #115917;} /*beginner*/
+.tag-yellow {background-color:#7a7109;} /*advanced*/
+.tag-red {background-color: #ac2b2b;} /*expert*/
+.tag-blue {background-color: #3931ce;} /*test*/
+
+
+
+/* ---------- page doc content ---------- */
 h1 {
     font-size: 2.3rem;
     border-bottom: 4px solid #636363;
     display: inline;
-    margin-bottom: 20px;
 }
-
 h2 {
     font-size: 1.8rem;
     border-bottom: 3px solid #636363;
     display: inline;
-    margin-bottom: 15px;
 }
-
-h2:target::before {
+h2:target::before { /*@FIX: doesnt work on firefox*/
     content: "";
     display: block;
     height: 70px;
     margin: -70px 0 0;
 }
-
 h3 {
     font-size: 1.2rem;
-    display: inline;
-    margin-bottom: 15px;    
+    display: block;
+    margin-top: 20px;
 }
-
 .page-text-link:hover {
     cursor: pointer;
 }
-
 .page-text-link:hover::after {
     content: " #";
     color: rgb(109, 100, 244);
     cursor: pointer;
 }
-
+.list-group {
+    margin-top: 20px;
+}
 .list-group p {
     font-weight: bold;
 }
-
 ul li {
     margin-left: 5%;
     padding: 4px;
 }
-
 .page-table {
     width: auto;
     border-collapse: collapse;
     text-align: left;
+    margin-top: 20px;
+    border: 2px solid #636363;
 }
-
 th, td {
     padding: 6px 20px 6px 6px;
     border: 1px solid #636363;
 }
-
-.page-table {
-    border: 2px solid #636363;
-}
-
 .page-table th {
     background-color: #272727;
     text-align: center;
-    font-size: 1.2em;
 }
-
 .page-table tr:nth-child(odd) {
     background-color: #191919;
 }
-
 .caption {
     margin-top: 7px;
-    padding: 4px 0px 4px 10px;
-    border-left: 6px solid #515151;
+    padding: 4px 0px 4px 17px;
+    border-left: 5px solid #515151;
     color: #5c5c5c;
 }
-
 .break {
     height: 20px;
 }
-
 .line {
     width: 100%;
-    height: 2px;
+    height: 3px;
     background-color: #636363;
-    margin: 3rem 0 3rem 0;
+    margin: 2em 0;
+}
+.paragraph {
+    padding-top: 20px;
 }
 
 
 
 /* ---------- info boxes ---------- */
-.warning {
-    padding:10px;
-    background-color: #ca5b5b;
-    border-left: 12px solid rgb(227, 55, 55);
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-}
 .info {
     padding:10px;
-    background-color: #d4cf40;
-    border-left: 12px solid rgb(171, 169, 11);
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
+    margin-top: 20px;
 }
-.additional {
-    padding:10px;
-    background-color: #49c0de;
-    border-left: 12px solid rgb(0, 149, 169);
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
+.i-red {
+    background-color: #f38686;
+    border-left: 12px solid rgb(249, 83, 83);
+}
+.i-purple {
+    background-color: #d780f4;
+    border-left: 12px solid rgb(206, 48, 231);
+}
+.i-green {
+    background-color: #8bea68;
+    border-left: 12px solid rgb(62, 200, 46);
 }
 .info-head {
     font-weight: bold;
@@ -289,7 +283,7 @@ th, td {
     text-transform:uppercase;
     font-size: 1.2rem;
 }
-.warning p, .additional p, .info p {
+.info p {
     color: #1d1d1d;
 }
 
@@ -299,6 +293,7 @@ th, td {
 .source-code {
     background-color: #202020;
     border-radius: 14px;
+    margin-top: 20px;
 }
 .code-top {
     display: grid;
@@ -394,11 +389,14 @@ th, td {
 .yellow {color: #DCDCAA}
 .dark-yellow {color: #f8c162}
 
+
+
 /* ----------- image ---------- */
 .image {
     width: 100%;
     text-align: left;
     border: 2px solid #636363;
+    margin-top: 20px;
 }
 .small {
     max-width: 50%;
@@ -410,20 +408,19 @@ th, td {
     max-width: 100%;
 }
 
+
+
 /* ---------- nav right styles ---------- */
 .right {
     position: sticky;
     top: 92.5px;
-
     height:max-content;
-
     max-height: 70vh;
     box-sizing: border-box;
     overflow-y: auto;
     margin: 5px;
     border-left: 1.7px solid #636363;
     padding: 20px 12px;
-    /* background-color: red; */
 }
 .right .right-head {
     font-weight: bold;
@@ -445,6 +442,8 @@ th, td {
     text-decoration: underline;
     cursor: pointer;
 }
+
+
 
 /* --------- footer ---------- */
 .footer {
@@ -482,6 +481,8 @@ th, td {
 .footer p .links {
     padding: 0 20px;
 }
+
+
 
 /* ---------- modal ---------- */
 .modal {
@@ -530,10 +531,9 @@ th, td {
     width: 20px;
     max-height: 20px;
     max-width: 20px;
-    transition: 0.1s;
 }
 .modal-header svg:hover {
-    fill: #db5757;
+    fill: #838383;
 }
 .modal-header .svg-right {
     text-align: right;
@@ -553,7 +553,7 @@ th, td {
     text-decoration: none;
 }
 .language-selection p:hover {
-    background-color: #424242;
+    background-color: #313131;
     cursor: default;
 }
 .modal-line {
@@ -577,7 +577,7 @@ th, td {
 .bg-highlight {
     background-color: #424242;
     padding: 2px;
-    border-radius: 7px;
+    border-radius: 3px;
     font-family: monospace;
     font-size: 1rem;
 }
