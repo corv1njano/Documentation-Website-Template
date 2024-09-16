@@ -7,62 +7,71 @@ document.head.appendChild(favicon);
 
 
 
-
 // create left nav menu
 const navMenu = document.getElementsByClassName('left')[0];
 const navMenuContent = {
     "navboxes": [
         {
-            "title": "Hello World",
+            "title": "1) Der Anfang",
             "links": [
                 {
-                    "name": "Text ausgeben",
+                    "name": "Einstieg in C#",
+                    "href": "/der-anfang/einstieg-in-csharp.html"
+                },
+                {
+                    "name": "Programmieren starten",
                     "href": "#"
                 },
                 {
-                    "name": "Input & Output",
+                    "name": "Hallo-Welt-Programm",
                     "href": "#"
                 }
             ]
         },
         {
-            "title": "Hello World",
+            "title": "2) Die Grundlagen",
             "links": [
                 {
-                    "name": "Text ausgeben",
+                    "name": "Variablen",
                     "href": "#"
                 },
                 {
-                    "name": "Input & Output",
+                    "name": "Kommentare",
+                    "href": "#"
+                },
+                {
+                    "name": "Numerische Datentypen",
+                    "href": "#"
+                },
+                {
+                    "name": "Textbasierte Datentypen",
+                    "href": "#"
+                },
+                {
+                    "name": "if-Anweisungen",
+                    "href": "#"
+                },
+                {
+                    "name": "Arrays",
+                    "href": "#"
+                },
+                {
+                    "name": "for-Schleife",
+                    "href": "#"
+                },
+                {
+                    "name": "for-each-Schleifen",
+                    "href": "#"
+                },
+                {
+                    "name": "switch-Anweisungen",
                     "href": "#"
                 }
             ]
         },
         {
-            "title": "Hello World",
-            "links": [
-                {
-                    "name": "Text ausgeben",
-                    "href": "#"
-                },
-                {
-                    "name": "Input & Output",
-                    "href": "#"
-                }
-            ]
-        },
-        {
-            "title": "Hello World",
-            "links": [
-                {
-                    "name": "Text ausgeben",
-                    "href": "#"
-                },
-                {
-                    "name": "Input & Output",
-                    "href": "#"
-                }
-            ]
+            "title": "3) Für Fortgeschrittene",
+            "links": []
         }
     ]
 };
@@ -161,7 +170,7 @@ const links = document.getElementsByClassName('page-text-link');
 for (let l = 0; l < links.length; l++) {
     links[l].addEventListener('click', function() {
         if (l == 0) {
-            var location = window.location.href;
+            var location = window.location.href.replace(/#.*/,'');
             navigator.clipboard.writeText(location);
         } else if (l > 0) {
             var location = window.location.href.replace(/#.*/,'') + '#' + this.getAttribute('id');
@@ -213,30 +222,5 @@ for (let x = 0; x < codeBoxCounter.length; x++) {
         var counterTag = document.createElement('p');
         counterTag.classList.add('code-counter');
         indexCount[x].appendChild(counterTag);
-    }
-}
-
-
-
-
-// dialog model handler
-const modal = document.getElementById("modal");
-const openModal = document.getElementById("modalTrigger");
-const closeModal = document.getElementById('closeModal');
- 
-openModal.addEventListener('click', function() {
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-})
-
-closeModal.onclick = function () {
-    modal.style.display = "none";
-    document.body.style.overflow = 'auto';
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = 'auto';
     }
 }
